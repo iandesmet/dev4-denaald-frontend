@@ -1,7 +1,7 @@
 import Head from "next/head";
+import Link from "next/link";
 import Layout from "../components/Layout";
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
 
 export default function Home({ data }) {
   return (
@@ -21,7 +21,7 @@ export default function Home({ data }) {
   );
 }
 export const getStaticProps = async () => {
-  const resp = await fetch(`${process.env.STRAPI_URL}/articles`);
+  const resp = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/articles`);
   const data = await resp.json();
 
   return {
